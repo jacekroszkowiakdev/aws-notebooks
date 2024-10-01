@@ -2,19 +2,21 @@
 
 ## Users and Groups
 
-## User Accounts
+## 1. User Accounts
 
--   User accoutns represent users on the Linux OS
--   Infomation about user accounts can be stored eitehr locally or on anohter server
--   Locally the infomration is stored in `/etc/passwd` file
--   As best practice it is recommedned to assign one user per one user account and it is advised to not share accounts
+-   User accounts represent individual users on the Linux operating system.
+-   Information about user accounts can be stored either locally or on another server.
+-   Locally, this information is stored in the /etc/passwd file.
+-   As a best practice, it is recommended to assign one user per user account and to avoid sharing accounts.
 
 **Example**
 
-Command `sudo tail /etc/passwd` will display the last 10 line of the `passwd` file. 10 is the default value, and it can be adjust by using `-n` option follwed by number you choose:
+The command sudo tail /etc/passwd will display the last 10 lines of the passwd file by default. You can adjust the number of lines shown by using the -n option followed by your desired number. For example, to display the last 5 lines:
 
 ```sh
 tail -n 5 /etc/passwd
 ```
 
-![passwd file](./img/passswd_file.png)
+In this case, the file being displayed is the /etc/passwd, which contains user account information.
+
+![passwd file](./img/passwd_file.png)
