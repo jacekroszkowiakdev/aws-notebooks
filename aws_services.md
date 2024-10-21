@@ -23,7 +23,8 @@ CloudTrail is an auditing, compliance monitoring, and governance service provide
 -   A typical log file in this hierarchy will have a name similar to:
     `123456789012_CloudTrail_us-west-1_20220209T1255ZHdkvFTXOA3Vnhbc.json.gz`
 -   The object hierarchy structure might look like this:
-    `bash
+
+```bash
     All Buckets
     └── Bucket_Name
           └── AWSLogs
@@ -31,15 +32,19 @@ CloudTrail is an auditing, compliance monitoring, and governance service provide
                     └── CloudTrail
                          └── us-west-1
                               └── 20220209
-    `
-    **NOTE**:
-    CloudTrail typically delivers logs within an average of about 15 minutes of an event.
+```
 
-CloudTrail offers several important benefits:
+**NOTE**:
+CloudTrail typically delivers logs within an average of about 15 minutes of an event.
+
+**CloudTrail offers several important benefits**:
 
 ![CloudTrail benefits](./img/cloud_trail_key_benefits.png)
 
-**Enhanced visibility**: CloudTrail provides detailed insight into user and resource activity in your AWS account, allowing you to track who performed specific actions and when they occurred.
-**Simplified compliance audits**: Activities are automatically logged and stored, making it easier to search through logs, detect noncompliant actions, speed up incident investigations, and respond more quickly to potential issues.
-**Operational troubleshooting**: By capturing a complete history of changes made in your account, CloudTrail helps you analyze and troubleshoot any operational problems.
-**Security monitoring**: CloudTrail enables you to identify account changes that could increase security risks and helps streamline AWS audit requests, simplifying audits, compliance, and troubleshooting.
+-   **Enhanced visibility**: CloudTrail provides detailed insight into user and resource activity in your AWS account, allowing you to track who performed specific actions and when they occurred.
+
+-   **Simplified compliance audits**: Activities are automatically logged and stored, making it easier to search through logs, detect noncompliant actions, speed up incident investigations, and respond more quickly to potential issues.
+
+-   **Operational troubleshooting**: By capturing a complete history of changes made in your account, CloudTrail helps you analyze and troubleshoot any operational problems.
+
+-   **Security monitoring**: CloudTrail enables you to identify account changes that could increase security risks and helps streamline AWS audit requests, simplifying audits, compliance, and troubleshooting.
