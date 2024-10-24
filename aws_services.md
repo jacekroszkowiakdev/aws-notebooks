@@ -75,3 +75,8 @@ Key Benefits:
 -   **Increased Message Durability**: Enhances durability with features like message archiving, replay, delivery retries, and dead-letter queues (DLQs).
 
 SNS provides a scalable solution to streamline communication between applications and users while maintaining efficiency and reliability.
+
+AWS CONFIG
+AWS LAMBDA
+AWS IAM
+AWS TRUSTED ADVISOR
