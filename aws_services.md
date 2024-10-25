@@ -76,7 +76,64 @@ Key Benefits:
 
 SNS provides a scalable solution to streamline communication between applications and users while maintaining efficiency and reliability.
 
-AWS CONFIG
-AWS LAMBDA
-AWS IAM
-AWS TRUSTED ADVISOR
+## AWS TRUSTED ADVISOR
+
+AWS Trusted Advisor is a tool that offers best practices and recommendations across five key categories to help optimize your AWS infrastructure. It helps to reduce cost, increase performance, and improve security by optimizing your AWS environment. These categories include:
+
+-   **Cost Optimization**: Identifies unused or idle resources to help reduce overall AWS costs.
+-   **Performance**: Offers suggestions to improve service usage and ensure your applications are operating efficiently by checking your service limits, ensuring that you take advantage of provisioned throughput, and monitoring for over-utilized instances
+-   **Security**: Provides checks to enhance data protection and security compliance within your AWS environment by closing gaps, activating various AWS security features, and examining your permissions
+-   **Fault Tolerance**: Enhance the availability and redundancy of your AWS application by leveraging features such as automatic scaling, health checks, deployment across multiple Availability Zones, and reliable backup options.
+-   **Service Limits**: Alerts you when approaching AWS service limits. Monitor service usage that exceeds 80% of the service limit. The check’s status is displayed with color-coded indicators on the dashboard page:
+
+![Trusted Advisor categories checks](./img/trusted_advisor_categories_and_checks.png)
+
+**Checks have a status**:
+
+-   ++Red(red exclamation mark)++ –Action is recommended
+-   ++Yellow(yellow exclamation mark)++ –Investigation is recommended
+-   ++Green(green checkmark)++ –No problem has been detected
+
+### AWS Trusted Advisor Features
+
+Trusted Advisor offers a variety of tools to tailor recommendations and proactively monitor your AWS resources:
+
+-   **Trusted Advisor Notifications**: Stay informed about your AWS resources with a weekly email notification, available when you opt in.
+-   **Access Management**: Control access to specific checks or entire categories.
+-   **AWS Support API**: Access and refresh Trusted Advisor results programmatically.
+-   **Action Links**: Easily implement recommendations by accessing report items via hyperlinks, which direct you to the AWS console.
+-   **Recent Changes**: Track recent check status changes on the console dashboard, with the most recent updates shown at the top.
+-   **Exclude Items**: Customize reports by excluding non-relevant items from check results.
+-   **Refresh All**: Refresh individual checks or all checks simultaneously by selecting “Refresh All” on the summary dashboard. Each check is eligible for a refresh every ++five minutes++.
+
+More details: [AWS Trusted Advisor product page](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/).
+
+### Trusted Advisor Security Checks
+
+Trusted Advisor provides essential security checks to all AWS customers free of charge, focusing on IAM, multi-factor authentication, and other security configurations:
+
+1. **AWS Identity and Access Management (IAM) Use**:
+   Verifies the presence of at least one IAM user, encouraging best practices by discouraging root access.
+
+2. **Multi-Factor Authentication (MFA) on Root Account**:
+   Checks the root account to ensure MFA is activated for enhanced security.
+
+3. **Security Groups – Specific Ports Unrestricted**:
+   Examines security groups for rules that allow unrestricted access (0.0.0.0/0) to specified ports, helping to prevent unauthorized access.
+
+4. **Amazon Simple Storage Service (Amazon S3) Bucket Permissions**:
+   Scans Amazon S3 buckets for open access permissions or access permissions granted to any authenticated AWS user.
+
+5. **Amazon Elastic Block Store (Amazon EBS) Public Snapshots**:
+   Inspects permission settings for Amazon EBS volume snapshots, notifying if any snapshots are publicly accessible.
+
+6. **Amazon Relational Database Service (Amazon RDS) Public Snapshots**:
+   Verifies the permission settings of Amazon RDS DB snapshots and alerts if any snapshots are marked as public.
+
+These checks, provided to all AWS customers, help promote performance and security best practices.
+
+## AWS CONFIG
+
+## AWS LAMBDA
+
+## AWS IAM
