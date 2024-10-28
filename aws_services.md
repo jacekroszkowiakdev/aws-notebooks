@@ -139,3 +139,26 @@ These checks, provided to all AWS customers, help promote performance and securi
 ## AWS IAM
 
 ## Amazon Relational Database Service (RDS)
+
+## Systems Manager
+
+Systems Manager is a management service that helps a user perform and automate administration tasks, including the following:
+
+-   Collect software inventory.
+-   Configure Microsoft Windows and Linux operating systems.
+-   Apply operating system (OS) patches.
+-   Create system images.
+
+Systems Manager automates the configuration and management of systems that run on premises and in the AWS Cloud. With Systems Manager, a user can select the instances that they want to manage and define the management tasks that they want to perform. Systems Manager also offers many capabilities and benefits that systems operations (SysOps) specialists find useful.
+
+CLI command instead of running the Systems Manager (from lab 169):
+
+```bash
+aws ssm send-command --document-name "c133986a3397980l8151403t1w403671920753-InstallDashboardApp-7k62gkAahNse" --document-version "1" --targets '[{"Key":"InstanceIds","Values":["i-02d370234942e73c4"]}]' --parameters '{}' --timeout-seconds 600 --max-concurrency "50" --max-errors "0" --region us-west-2
+```
+
+![Systems Manager](./img/Systems_Manager.png)
+
+When you use Session Manager with Microsoft Windows, Session Manager provides access to a PowerShell console on the instance.
+
+## AWS CodeDeploy / on Developer Tools on AWS

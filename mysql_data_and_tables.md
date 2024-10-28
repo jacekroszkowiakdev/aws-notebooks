@@ -221,6 +221,7 @@ Consider two tables: `Customers` and `Orders`.
     ```
 
 -   **Orders Table**
+
     ```sql
     CREATE TABLE Orders (
         OrderID INT PRIMARY KEY,
