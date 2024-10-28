@@ -32,59 +32,6 @@ Each of these sublanguage groups plays a critical role in organizing, securing, 
 
 Predefined data types, also known as built-in data types, are commonly used in SQL for defining the type of data that can be stored in a database. The range of permissible values for numeric data types depends on the specific database management system (DBMS) in use.
 
-#### Character String Types
-
--   **CHAR**: Fixed-length character string, padded with spaces if the input is shorter than the defined length.
-
-    -   Example: `CHAR(10)` might store `'Hello     '` (space-padded if less than 10 characters).
-
--   **VARCHAR**: Variable-length character string, up to a specified maximum length.
-
-    -   Example: `VARCHAR(50)` could store `'New York'` or `'Los Angeles'`.
-
--   **CLOB (Character Large Object)**: A large character data type designed for storing large amounts of text, such as documents.
-    -   Example: `CLOB` might store `"Lorem ipsum dolor sit amet..."` for storing long text content.
-
-#### Numeric Types
-
--   **INTEGER**: Stores whole numbers without decimals, with DBMS-dependent minimum and maximum values.
-
-    -   Example: `INTEGER` might store `102030` for large integers.
-
--   **SMALLINT**: Similar to `INTEGER`, but optimized for smaller values.
-
-    -   Example: `SMALLINT` could store `10`, often used for smaller numeric ranges.
-
--   **BIGINT**: Similar to `INTEGER` but optimized for large numbers, often for cases needing a larger range.
-
-    -   Example: `BIGINT` might store `98765432101`.
-
--   **DECIMAL** or **NUMERIC**: Fixed-point numbers, where precision and scale are defined by the user.
-    -   Example: `DECIMAL(10, 2)` could store values like `12345.67`, where `10` is the total number of digits and `2` is the number of digits to the right of the decimal.
-
-#### Date and Time Types
-
--   **DATE**: Stores calendar dates (year, month, day).
-
-    -   Example: `DATE` could store `'2023-12-25'` for December 25, 2023.
-
--   **TIME**: Stores time of day (hours, minutes, seconds).
-
-    -   Example: `TIME` might store `'14:30:00'` for 2:30 PM.
-
--   **TIMESTAMP**: Stores date and time information combined, often including fractional seconds.
-    -   Example: `TIMESTAMP` could store `'2023-12-25 14:30:00.123456'` for a precise moment in time.
-
-#### Boolean Type
-
--   **BOOLEAN**: Stores `TRUE`, `FALSE`, or `NULL` values, often used in logical comparisons.
-    -   Example: A `BOOLEAN` field could store `TRUE` to indicate an active status or `FALSE` for inactive.
-
-#### Binary Data Types
-
--   **BLOB (Binary Large Object)**: Used to store binary data, such as images, audio, and other media types.
-    -   Example: A `BLOB` might store an image file as binary data.
-
 ### Identifiers in SQL
 
 -   **Identifiers** represent names of objects (such as tables and columns) created by the user, as opposed to SQL keywords or commands.
@@ -357,3 +304,13 @@ DROP TABLE Customers, Orders;
 -**TIMESTAMP**: Represents a moment in time indicated by both a date and a time, combines the values of a `DATE` and a `TIME`
 
     -   **Example Format**: `yyyy-mm-dd hh:mm:ss`
+
+#### Boolean Type
+
+-   **BOOLEAN**: Stores `TRUE`, `FALSE`, or `NULL` values, often used in logical comparisons.
+    -   Example: A `BOOLEAN` field could store `TRUE` to indicate an active status or `FALSE` for inactive.
+
+#### Binary Data Types
+
+-   **BLOB (Binary Large Object)**: Used to store binary data, such as images, audio, and other media types.
+    -   Example: A `BLOB` might store an image file as binary data.
