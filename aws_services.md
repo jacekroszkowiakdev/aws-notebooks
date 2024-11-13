@@ -140,7 +140,13 @@ These checks, provided to all AWS customers, help promote performance and securi
 
 ## Amazon Relational Database Service (RDS)
 
+## Amazon Inspector
+
+Amazon Inspector is an automated vulnerability management service that continually scans workloads for software vulnerabilities and unintended network exposure. Amazon Inspector automatically discovers workloads, such as Amazon EC2 instances, containers, and Lambda functions, and scans them for software vulnerabilities and unintended network exposure.
+
 ## Systems Manager
+
+Systems Manager is a secure end-to-end management solution for hybrid cloud environments. Systems Manager is the operations hub for your AWS applications and resources and consists of four core feature groups.
 
 Systems Manager is a management service that helps a user perform and automate administration tasks, including the following:
 
