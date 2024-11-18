@@ -132,6 +132,10 @@ Trusted Advisor provides essential security checks to all AWS customers free of 
 
 These checks, provided to all AWS customers, help promote performance and security best practices.
 
+## Amazon Elastic Block Storage (Amazon EBS)
+
+Amazon Elastic Block Store (Amazon EBS) is a scalable, high-performance block-storage service that is designed for Amazon Elastic Compute Cloud (Amazon EC2). In this lab, you learn how to create an EBS volume and perform operations on it, such as attaching it to an instance, creating a file system, and taking a snapshot backup.
+
 ## AWS CONFIG
 
 Use to define and enforce Tags...
