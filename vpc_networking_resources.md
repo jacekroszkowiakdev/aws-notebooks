@@ -35,11 +35,84 @@ Recall that a security group is a virtual firewall at the instance level that co
 -   Port range: All or specific range
 -   Description: You can input a description
 
+---
+
+## STEPS
+
 **Note**: Although almost anything can be created in any order, it is easier to have an approach. Having a flow or an approach will assist you in troubleshooting issues and ensure that you do not forget a resource.
 
-1. CREATE VPC
-2. CREATE SUBNETS
-3. CREATE ROUTE TABLE
+1. **CREATE VPC**
+
+2. **CREATE SUBNETS**
+
+**Logic for Public Subnet CIDR**
+
+1. `Subnetting the VPC CIDR Block`:
+
+You divide the VPC's CIDR block into smaller ranges for different subnets.
+The subnet mask must be longer than /26 (e.g., /27, /28, etc.), as a subnet cannot exceed the size of the VPC CIDR.
+
+2. `Public Subnet Size`:
+
+A /27 subnet provides 32 IP addresses (2^(32-27)).
+This is typically sufficient for public-facing resources like NAT gateways, bastion hosts, or load balancers. Adjust based on your needs.
+
+3. `Routing Requirements`:
+
+A public subnet must have a route in the route table that directs traffic destined for the internet (e.g., 0.0.0.0/0) through an internet gateway.
+
+4. `IP Address Allocation Best Practices`:
+
+Reserve smaller subnets for public use (e.g., /27 or /28).
+Keep private subnets larger, as they usually host more resources like application servers or databases.
+
+**Suggested Public Subnet CIDR**
+
+For a /26 VPC CIDR, split it into smaller blocks. Examples include:
+
+-   Subnet 1 (Public): 0.0.0.0/27 (IP range: 0.0.0.0 - 0.0.0.31)
+-   Subnet 2 (Private): 0.0.0.32/27 (IP range: 0.0.0.32 - 0.0.0.63)
+
+**Best Practices**
+
+-   Leave Room for Expansion:
+    Reserve additional CIDRs for future use when allocating subnets.
+
+-   Tagging:
+    Clearly tag subnets (e.g., "Public-Subnet", "Private-Subnet") to avoid confusion.
+
+-   Security:
+    Use network access control lists (NACLs) and security groups to limit access to resources in public subnets.
+
+-   High Availability:
+    Design multiple subnets across Availability Zones for redundancy.
+
+3. **CREATE ROUTE TABLE**
+
+Navigate to the VPC Console:
+
+Log in to your AWS Management Console.
+Open the VPC Dashboard and click on Route Tables.
+Create a New Route Table:
+
+Click Create Route Table.
+Assign a name to the route table for identification (e.g., "Public-Route-Table").
+Select the VPC in which the route table will operate.
+Edit Routes:
+
+Add or modify routes to direct traffic:
+For public subnets, add a route for 0.0.0.0/0 (or equivalent IPv6 ::/0) pointing to an Internet Gateway (IGW).
+For private subnets, add routes pointing to a NAT Gateway or Transit Gateway for internet access if needed.
+Associate Subnets:
+
+Assign the route table to one or more subnets by:
+Selecting the route table.
+Navigating to the Subnet Associations tab.
+Clicking Edit Subnet Associations and selecting the desired subnets.
+Save and Verify:
+
+Save your changes and review the routing table to ensure it has the correct entries.
+
 4. Create Internet Gateway and attach Internet Gateway to the VPC
 5. Add route to route table and associate subnet to route table
 6. Creating a Network ACL
